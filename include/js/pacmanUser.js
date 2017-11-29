@@ -1,4 +1,4 @@
-/**
+/*
  * Gestion du pacman
  * 
  * @param {[type]} game [description]
@@ -103,6 +103,14 @@ Pacman.User = function (game, map)
         direction = LEFT;
         due = LEFT;
     };
+
+    /**
+     * retourne la position du Pacman
+     */
+    function getPosition()
+    {
+        return position;
+    } 
     
     function reset()
     {

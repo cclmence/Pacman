@@ -143,13 +143,15 @@ Pacman.Ghost = function (game, map, colour)
      * Les 2 autres le suivent
      * Work in progress
     */ 
-    function getgoToPacman(dir) 
+    function goToPacman(dir) 
     { 
-        if (dir === 'UP') return this.pointToCoord();
+/*      if (dir === 'UP') return this.pointToCoord();
         if (dir === 'DOWN') return this.getD();
         if (dir === 'LEFT') return this.getL();
         if (dir === 'RIGHT') return this.getR();
-        return null;
+        return null; */
+       // return dir = Pacman.User.position;
+       return dir = new Pacman.User({Pacman.User.position}, map);
     };
 
     /**
@@ -165,7 +167,7 @@ Pacman.Ghost = function (game, map, colour)
 
     function eat() { 
         eatable = null;
-        direction = goToPacman(direction);
+        direction = oppositeDirection(direction);
         eaten = game.getTick();
     };
 
@@ -363,3 +365,4 @@ Pacman.Ghost = function (game, map, colour)
     };
     
 };// fin de la classe Ghost
+
